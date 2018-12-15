@@ -1,0 +1,65 @@
+module my_IO(
+	input clk,
+	input clk_ram,
+	input CLOCK_50,
+	inout 		   PS2_CLK,
+	inout 		  	PS2_DAT,
+	output hsync, // 行同步和列同步信号
+	output vsync,
+	output valid, //消隐信号
+	output [7:0] vga_r, // 红绿蓝颜色信号
+	output [7:0] vga_g,
+	output [7:0] vga_b,
+	output vga_clk,
+	output sync_n,
+	output [9:0] h_addr,// 提供给上层模块的当前扫描像素点坐标
+	output [9:0] v_addr,
+	input reset
+);
+	reg wren;
+	reg [3:0]red;
+	reg [3:0]green;
+	reg [3:0]blue;
+	wire [7:0]font_ascii;
+	wire [11:0]raddr;	
+	wire [11:0]waddr;	
+	wire [7:0] keybddata;
+	
+	reg [15:0]romaddr;
+	
+	reg black;
+	reg [7:0] ascii_data;
+	
+	assign sync_n = 0;
+	initial wren =0;
+	assign raddr = ({2'b00,v_addr} >> 4)*12'd70 + {2'b00,h_addr}/12'd9;
+always @ (font_ascii)
+	case(font_ascii)
+	default:romaddr = 16'd3;
+	endcase	
+always  @ (black)
+	case(black)
+	1'b0:begin red=4'b0000;green=4'b0000;blue=4'b0000; end
+	1'b1:begin red=4'b1111;green=4'b1111;blue=4'b1111; end
+	endcase
+transfer transasc(keybddata,ascii_data,wren);
+	
+clkgen #(25000000) clk1(.clkin(clk),.rst(1'b0),.clken(1'b1),.clkout(vga_clk));
+
+picture ram(.rdaddress(raddr),.wraddress(waddr),.clock(clk_ram),.q(font_ascii),.wren(wren),.data(ascii_data));
+
+vga_font rom(.address(romaddr*16*9+{12'd0,v_addr[3:0]}*16'd9+{2'd0,h_addr}),.q(black),.clock(clk_ram));
+
+ps2_keyboard(CLOCK_50,1'b1,PS2_CLK,PS2_DAT,keybddata,waddr);
+
+vga_ctrl vga(.pclk(vga_clk),.reset(reset),
+.vga_data({red,4'b0000,green,4'b0000,blue,4'b0000}),
+	.h_addr(h_addr),
+	.v_addr(v_addr),
+	.hsync(hsync),
+	.vsync(vsync),
+	.valid(valid),
+	.vga_r(vga_r),
+	.vga_g(vga_g),
+	.vga_b(vga_b));
+endmodule

@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at ps2_keyboard.v(23): always construct contains both blocking and non-blocking assignments File: D:/quartus/Pro11/ps2_keyboard.v Line: 23
+Warning (10268): Verilog HDL information at my_IO.v(85): always construct contains both blocking and non-blocking assignments File: D:/quartus/Pro11/my_IO.v Line: 85
+Warning (10268): Verilog HDL information at my_IO.v(138): always construct contains both blocking and non-blocking assignments File: D:/quartus/Pro11/my_IO.v Line: 138
+Warning (10268): Verilog HDL information at my_sec.v(12): always construct contains both blocking and non-blocking assignments File: D:/quartus/Pro11/my_sec.v Line: 12

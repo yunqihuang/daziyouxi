@@ -1,0 +1,341 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "hsync",
+					"strict" : false
+				},
+				{
+					"name" : "vsync",
+					"strict" : false
+				},
+				{
+					"name" : "valid",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_r[7]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_g[7]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_b[7]",
+					"strict" : false
+				},
+				{
+					"name" : "vga_clk",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "h_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "v_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "raddr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "fontaddr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "black",
+					"strict" : false
+				},
+				{
+					"name" : "w_clk",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "keybddata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_ram",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

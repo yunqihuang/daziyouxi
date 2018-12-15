@@ -1,0 +1,147 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/01/2018 20:11:10"
+                                                                                
+// Verilog Test Bench template for design : my_IO
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module ps2_keyboard_model(
+ output reg ps2_clk,
+ output reg ps2_data
+ );
+ parameter [31:0] kbd_clk_period = 60;
+ initial ps2_clk = 1'b1;
+
+ task kbd_sendcode;
+ input [7:0] code; // key to be sent
+ integer i;
+
+ reg[10:0] send_buffer;
+	begin
+	send_buffer[0] = 1'b0; // start bit
+	send_buffer[8:1] = code; // code
+	send_buffer[9] = ~(^code); // odd parity bit
+	send_buffer[10] = 1'b1; // stop bit
+	i = 0;
+	while( i < 11) 
+		begin
+			// set kbd_data
+		ps2_data = send_buffer[i];
+		#(kbd_clk_period/2) ps2_clk = 1'b0;
+		#(kbd_clk_period/2) ps2_clk = 1'b1;
+		i = i + 1;
+		end
+	end
+endtask
+endmodule
+module my_IO_vlg_tst();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg treg_PS2_CLK;
+reg treg_PS2_DAT;
+reg clk;
+reg clk_ram;
+reg reset;
+// wires                                               
+wire PS2_CLK;
+wire PS2_DAT;
+wire debug;
+wire [9:0]  h_addr;
+wire hsync;
+wire [11:0]  raddr;
+wire [11:0]  waddr;
+wire [11:0]  fontaddr;
+wire sync_n;
+wire [9:0]  v_addr;
+wire valid;
+wire [7:0]  vga_b;
+wire vga_clk;
+wire [7:0]  vga_g;
+wire [7:0]  vga_r;
+wire vsync;
+wire black;
+wire [7:0]keybddata;
+wire w_clk;
+wire [10:0] new
+// assign statements (if any)                          
+assign PS2_CLK = treg_PS2_CLK;
+assign PS2_DAT = treg_PS2_DAT;
+ps2_keyboard_model model(PS2_CLK,PS2_DAT);
+my_IO i1 (
+// port map - connection between master ports and signals/registers   
+	.PS2_CLK(PS2_CLK),
+	.PS2_DAT(PS2_DAT),
+	.clk(clk),
+	.clk_ram(clk_ram),
+	.debug(debug),
+	.h_addr(h_addr),
+	.hsync(hsync),
+	.raddr(raddr),
+	.reset(reset),
+	.sync_n(sync_n),
+	.v_addr(v_addr),
+	.valid(valid),
+	.vga_b(vga_b),
+	.vga_clk(vga_clk),
+	.vga_g(vga_g),
+	.vga_r(vga_r),
+	.vsync(vsync),
+	.waddr(waddr),
+	.fontaddr(fontaddr),
+	.black(black),
+	.keybddata(keybddata),
+	.w_clk(w_clk),
+	.new(new)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+    clk=0;
+	 clk_ram = 0;
+	 reset =0;                                                 
+     model.kbd_sendcode(8'h1C); // press 'A'
+     model.kbd_sendcode(8'hF0); // break code
+	  model.kbd_sendcode(8'h1C); // release 'A'
+     model.kbd_sendcode(8'h1B); // press 'S'
+     #20 model.kbd_sendcode(8'h1B); // keep pressing 'S'
+     #20 model.kbd_sendcode(8'h1B); // keep pressing 'S'
+     model.kbd_sendcode(8'hF0); // break code
+     model.kbd_sendcode(8'h1B); // release 'S'
+     #20;                                                     
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+        #5 clk = ~clk;clk_ram = ~clk_ram;                                                                                               
+// --> end                                             
+end                                                    
+endmodule
+

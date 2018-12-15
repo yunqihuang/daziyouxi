@@ -1,0 +1,245 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clkgen:clk1|clkout'
+Slack : -32.818
+TNS   : -859.784
+
+Type  : Slow 1100mV 85C Model Setup 'clk_ram'
+Slack : -29.946
+TNS   : -3357.127
+
+Type  : Slow 1100mV 85C Model Setup 'clkgen:clk5|clkout'
+Slack : -9.951
+TNS   : -7666.265
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -7.372
+TNS   : -505.904
+
+Type  : Slow 1100mV 85C Model Setup 'clkgen:clk6|clkout'
+Slack : -1.468
+TNS   : -31.612
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clkgen:clk6|clkout'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clkgen:clk1|clkout'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clk_ram'
+Slack : 0.557
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clkgen:clk5|clkout'
+Slack : 1.128
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_ram'
+Slack : -2.174
+TNS   : -802.336
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkgen:clk5|clkout'
+Slack : -0.479
+TNS   : -585.608
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.458
+TNS   : -74.246
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkgen:clk1|clkout'
+Slack : -0.394
+TNS   : -50.737
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clkgen:clk6|clkout'
+Slack : -0.394
+TNS   : -15.043
+
+Type  : Slow 1100mV 0C Model Setup 'clkgen:clk1|clkout'
+Slack : -33.410
+TNS   : -862.623
+
+Type  : Slow 1100mV 0C Model Setup 'clk_ram'
+Slack : -30.154
+TNS   : -3313.236
+
+Type  : Slow 1100mV 0C Model Setup 'clkgen:clk5|clkout'
+Slack : -10.254
+TNS   : -7891.929
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -7.531
+TNS   : -506.939
+
+Type  : Slow 1100mV 0C Model Setup 'clkgen:clk6|clkout'
+Slack : -1.446
+TNS   : -30.718
+
+Type  : Slow 1100mV 0C Model Hold 'clk_ram'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clkgen:clk6|clkout'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clkgen:clk1|clkout'
+Slack : 0.511
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clkgen:clk5|clkout'
+Slack : 1.096
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_ram'
+Slack : -2.174
+TNS   : -800.471
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.471
+TNS   : -79.993
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkgen:clk5|clkout'
+Slack : -0.462
+TNS   : -573.797
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkgen:clk1|clkout'
+Slack : -0.394
+TNS   : -50.603
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clkgen:clk6|clkout'
+Slack : -0.394
+TNS   : -14.945
+
+Type  : Fast 1100mV 85C Model Setup 'clkgen:clk1|clkout'
+Slack : -18.031
+TNS   : -474.845
+
+Type  : Fast 1100mV 85C Model Setup 'clk_ram'
+Slack : -16.576
+TNS   : -1928.118
+
+Type  : Fast 1100mV 85C Model Setup 'clkgen:clk5|clkout'
+Slack : -5.749
+TNS   : -4456.162
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -4.218
+TNS   : -230.294
+
+Type  : Fast 1100mV 85C Model Setup 'clkgen:clk6|clkout'
+Slack : -0.702
+TNS   : -14.042
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clkgen:clk1|clkout'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clkgen:clk6|clkout'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clk_ram'
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clkgen:clk5|clkout'
+Slack : 0.550
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_ram'
+Slack : -2.174
+TNS   : -799.339
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.491
+TNS   : -13.927
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkgen:clk5|clkout'
+Slack : -0.221
+TNS   : -66.162
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkgen:clk1|clkout'
+Slack : -0.152
+TNS   : -3.153
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clkgen:clk6|clkout'
+Slack : -0.018
+TNS   : -0.018
+
+Type  : Fast 1100mV 0C Model Setup 'clkgen:clk1|clkout'
+Slack : -16.792
+TNS   : -434.725
+
+Type  : Fast 1100mV 0C Model Setup 'clk_ram'
+Slack : -15.214
+TNS   : -1718.315
+
+Type  : Fast 1100mV 0C Model Setup 'clkgen:clk5|clkout'
+Slack : -5.060
+TNS   : -3908.172
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -3.859
+TNS   : -207.414
+
+Type  : Fast 1100mV 0C Model Setup 'clkgen:clk6|clkout'
+Slack : -0.581
+TNS   : -11.443
+
+Type  : Fast 1100mV 0C Model Hold 'clk_ram'
+Slack : 0.119
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.171
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clkgen:clk1|clkout'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clkgen:clk6|clkout'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clkgen:clk5|clkout'
+Slack : 0.487
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_ram'
+Slack : -2.174
+TNS   : -799.741
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.496
+TNS   : -13.668
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkgen:clk5|clkout'
+Slack : -0.142
+TNS   : -29.301
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkgen:clk1|clkout'
+Slack : -0.091
+TNS   : -1.290
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clkgen:clk6|clkout'
+Slack : 0.016
+TNS   : 0.000
+
+------------------------------------------------------------

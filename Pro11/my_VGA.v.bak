@@ -1,0 +1,33 @@
+module my_VGA(
+	input clk,
+	input clk_rom,
+	output hsync, // 行同步和列同步信号
+	output vsync,
+	output valid, //消隐信号
+	output [7:0] vga_r, // 红绿蓝颜色信号
+	output [7:0] vga_g,
+	output [7:0] vga_b,
+	output vga_clk,
+	output sync_n,
+	output [9:0] h_addr,// 提供给上层模块的当前扫描像素点坐标
+	output [9:0] v_addr,
+	input reset
+);
+	wire [3:0]red;
+	wire [3:0]green;
+	wire [3:0]blue;
+	
+	assign sync_n = 0;
+clkgen #(25000000) clk1(.clkin(clk),.rst(1'b0),.clken(1'b1),.clkout(vga_clk));
+picture rom(.address({h_addr,v_addr[8:0]}),.clock(clk_rom),.q({red,green,blue}));
+vga_ctrl vga(.pclk(vga_clk),.reset(reset),
+.vga_data({red,4'b0000,green,4'b0000,blue,4'b0000}),
+	.h_addr(h_addr),
+	.v_addr(v_addr),
+	.hsync(hsync),
+	.vsync(vsync),
+	.valid(valid),
+	.vga_r(vga_r),
+	.vga_g(vga_g),
+	.vga_b(vga_b));
+endmodule

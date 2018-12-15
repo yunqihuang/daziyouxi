@@ -1,0 +1,59 @@
+module transfer(in,out);
+	input [7:0]in;
+	output reg[7:0] out;
+always @ (in)
+	case (in)
+   8'h15:begin out=8'h71;end 
+   8'h16:begin out=8'h31;end
+	8'h1B:begin out=8'h73;end
+   8'h1C:begin out=8'h61;end
+   8'h1D:begin out=8'h77;end
+   8'h1E:begin out=8'h32;end
+   8'h21:begin out=8'h63;end
+   8'h22:begin out=8'h78;end
+   8'h23:begin out=8'h64;end
+   8'h24:begin out=8'h65;end
+   8'h25:begin out=8'h34;end
+   8'h26:begin out=8'h33;end
+   8'h29:begin out=8'h01;end
+   8'h2A:begin out=8'h76;end
+   8'h2B:begin out=8'h66;end
+   8'h2C:begin out=8'h74;end
+   8'h2D:begin out=8'h72;end
+   8'h2E:begin out=8'h35;end 
+   8'h31:begin out=8'h6E;end
+   8'h32:begin out=8'h62;end
+   8'h33:begin out=8'h68;end
+   8'h34:begin out=8'h67;end
+   8'h35:begin out=8'h79;end
+   8'h36:begin out=8'h36;end
+   8'h3A:begin out=8'h6D;end
+   8'h3B:begin out=8'h6A;end
+   8'h3C:begin out=8'h75;end
+   8'h3D:begin out=8'h37;end
+   8'h3E:begin out=8'h38;end
+   8'h42:begin out=8'h6B;end
+   8'h43:begin out=8'h69;end
+   8'h44:begin out=8'h6F;end
+   8'h45:begin out=8'h30;end
+   8'h46:begin out=8'h39;end
+   8'h4B:begin out=8'h6C;end
+   8'h4C:begin out=8'h3A;end
+   8'h4D:begin out=8'h70;end
+   8'h55:begin out=8'h3D;end
+   8'h69:begin out=8'h31;end
+   8'h6B:begin out=8'h34;end
+   8'h6C:begin out=8'h37;end
+   8'h70:begin out=8'h30;end
+   8'h72:begin out=8'h32;end
+   8'h73:begin out=8'h35;end
+   8'h74:begin out=8'h36;end
+   8'h75:begin out=8'h38;end
+   8'h7A:begin out=8'h33;end
+   8'h7D:begin out=8'h39;end
+	8'h1A:begin out=8'h7a;end
+	8'h5A:begin out=8'h02;end
+	8'h66:begin out=8'h03;end
+	default: begin out = 8'h00;end
+	endcase
+endmodule
