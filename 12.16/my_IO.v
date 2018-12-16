@@ -43,7 +43,7 @@ module my_IO(
 	reg [7:0]data_buf;
 	reg wren;
 	//wire w_clk;
-	reg [9:0] first;
+	reg [20:0] first;
 	wire cur_clk;
 	wire game_clk;
 	wire rel_clk;
@@ -73,10 +73,10 @@ module my_IO(
 	assign debug_raddr =  ({2'b00,v_addr-1} >> 4)*12'd70 + {2'b00,h_addr-1}/12'd9;
 	assign fontaddr = romaddr*16+ (new[3:0]-1);
 	assign point =  (h_addr-1)%9;
-	assign x_addr=(h_addr-1)/9;
-	//assign black = h_addr>630 ? 0: char[point-1];
+	assign x_addr=h_addr>630 ? 0:(h_addr-1)/9;
+	assign black = h_addr>630 ? 0: char[point-1];
 
-	assign black = char[point-1];
+	//assign black = char[point-1];
 	
 	//dis dis_module(.rdaddress(point),.wraddress(dis_counter),.clock(rel_clk),.q(dis_val),.wren(1),.data(data_buf));	
 	always @(posedge rel_clk)
@@ -120,16 +120,16 @@ always @ (posedge w_clk)
 			new_ascii<=0;
 			gm_write_addr = raddr;
 		end
-		//else if(new%16==1&& m_seq%23==0 && ran_en)
 		else if(new%16==1 && m_seq[22:5] == 0)
+		//else if(x_addr==0)
 		begin
 			new_ascii<=97+m_seq%26;
-			gm_write_addr=70+({2'b00,(10'd480-offset[x_addr]-1)}>>4)*12'd70 +  {2'b00,h_addr-1}/12'd9;
+			gm_write_addr=70+({2'b00,(10'd480-offset[x_addr]-1)}>>4)*12'd70 +  x_addr;
 		end
 		else
 		begin
 			new_ascii<=0;
-			gm_write_addr=({2'b00,(10'd480-offset[x_addr]-1)}>>4)*12'd70 +  {2'b00,h_addr-1}/12'd9;
+			gm_write_addr=({2'b00,(10'd480-offset[x_addr]-1)}>>4)*12'd70 +  x_addr;
 		end
 	end
 always @ (posedge vga_clk)
